@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
@@ -33,6 +34,7 @@ namespace HelloGreetingApplication.Controllers
         /// <param name="requestModel"></param>
         /// <returns> response model</returns>
         [HttpPost]
+
         public IActionResult Post(RequestModel requestModel)
         {
             if (requestModel == null || string.IsNullOrWhiteSpace(requestModel.Key) || string.IsNullOrWhiteSpace(requestModel.Value))
@@ -73,7 +75,8 @@ namespace HelloGreetingApplication.Controllers
         [HttpPut("{key}")]
         public IActionResult Put(string key, string newValue)
         {
-            if (!greetings.ContainsKey(key))
+
+                if (!greetings.ContainsKey(key))
             {
                 return NotFound(new ResponseModel<string>
                 {
@@ -83,6 +86,7 @@ namespace HelloGreetingApplication.Controllers
                 });
             }
 
+
             greetings[key] = newValue;
             return Ok(new ResponseModel<string>
             {
@@ -90,8 +94,10 @@ namespace HelloGreetingApplication.Controllers
                 Message = "Greeting updated successfully.",
                 Data = $"Key: {key}, Value: {newValue}"
             });
-
         }
+
+
+        
 
         /// <summary>
         /// Delete method to remove a greeting message

@@ -1,6 +1,7 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.OpenApi.Models;
-
+using BusinessLayer.Interface;
+using BusinessLayer.Service;
+using RepositoryLayer.Interface;
+using RepositoryLayer.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,9 @@ builder.Services.AddControllers();
 //Add Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IGreetingBL, GreetingBL>();
+builder.Services.AddScoped<IGreetingRL, GreetingRL>();
+
 
 var app = builder.Build();
 

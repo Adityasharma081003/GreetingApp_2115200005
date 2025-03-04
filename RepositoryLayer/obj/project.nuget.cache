@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lyzqj2nsT6k=",
+  "dgSpecHash": "GHrZhbt7bxg=",
   "success": true,
-  "projectFilePath": "C:\\Greeting\\HelloGreetingApplication\\RepositoryLayer\\RepositoryLayer.csproj",
+  "projectFilePath": "C:\\Greeting\\RepositoryLayer\\RepositoryLayer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

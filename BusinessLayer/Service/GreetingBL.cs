@@ -1,21 +1,26 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Interface;
+using RepositoryLayer.Interface;
 
-namespace BusinessLayer
+namespace BusinessLayer.Service
 {
     public class GreetingBL : IGreetingBL
     {
-        public string GetGreeting()
+        private readonly IGreetingRL _greetingRL;
+
+        public GreetingBL(IGreetingRL greetingRL)
         {
-            return "Hello World";
+            _greetingRL = greetingRL;
+        }
+
+        public string GetGreetingMessage()
+        {
+            return _greetingRL.GetGreeting();
         }
     }
-
-
-
 }
-

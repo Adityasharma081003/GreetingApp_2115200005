@@ -1,0 +1,12 @@
+C:\Greeting\ModelLayer\bin\Debug\net6.0\ModelLayer.deps.json
+C:\Greeting\ModelLayer\bin\Debug\net6.0\ModelLayer.dll
+C:\Greeting\ModelLayer\bin\Debug\net6.0\ModelLayer.pdb
+C:\Greeting\ModelLayer\obj\Debug\net6.0\ModelLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Greeting\ModelLayer\obj\Debug\net6.0\ModelLayer.AssemblyInfoInputs.cache
+C:\Greeting\ModelLayer\obj\Debug\net6.0\ModelLayer.AssemblyInfo.cs
+C:\Greeting\ModelLayer\obj\Debug\net6.0\ModelLayer.csproj.CoreCompileInputs.cache
+C:\Greeting\ModelLayer\obj\Debug\net6.0\ModelLayer.sourcelink.json
+C:\Greeting\ModelLayer\obj\Debug\net6.0\ModelLayer.dll
+C:\Greeting\ModelLayer\obj\Debug\net6.0\refint\ModelLayer.dll
+C:\Greeting\ModelLayer\obj\Debug\net6.0\ModelLayer.pdb
+C:\Greeting\ModelLayer\obj\Debug\net6.0\ref\ModelLayer.dll
