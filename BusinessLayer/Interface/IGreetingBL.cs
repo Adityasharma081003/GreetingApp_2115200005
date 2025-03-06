@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,12 @@ namespace BusinessLayer.Interface
     public interface IGreetingBL
     {
         //string GetGreetingMessage();
-        string GetGreetingMessage(string firstName,string lastName);
+
+        string GetGreetingMessage(string firstName, string lastName);
         string GetPersonalizedGreeting(GreetingRequestModel request);
 
         bool AddGreeting(GreetingDTO greetingDTO);
-        GreetingDTO GetGreetingById(int id);
 
+        List<GreetingDTO> GetAllGreetings();
     }
 }

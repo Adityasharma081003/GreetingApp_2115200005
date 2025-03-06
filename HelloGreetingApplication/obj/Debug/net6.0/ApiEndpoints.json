@@ -101,18 +101,12 @@
   },
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
-    "Method": "GetGreetingById",
-    "RelativePath": "HelloGreeting/getgreetbyid/{id}",
+    "Method": "GetAllGreetings",
+    "RelativePath": "HelloGreeting/getallgreeting",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

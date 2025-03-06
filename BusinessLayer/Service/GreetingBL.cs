@@ -19,9 +19,10 @@ namespace BusinessLayer.Service
         {
             _greetingRL = greetingRL;
         }
-        public GreetingDTO GetGreetingById(int id)
+
+        public List<GreetingDTO> GetAllGreetings()
         {
-            return _greetingRL.GetGreetingById(id);
+            return _greetingRL.GetAllGreetings();
         }
 
         public bool AddGreeting(GreetingDTO greetingDTO)
@@ -29,31 +30,34 @@ namespace BusinessLayer.Service
             return _greetingRL.AddGreeting(greetingDTO);
         }
 
-        public string GetGreetingMessage(string firstName,string lastName)
+        public string GetGreetingMessage(string firstName, string lastName)
         {
             return GenerateGreeting(firstName, lastName);
         }
+
         public string GetPersonalizedGreeting(GreetingRequestModel request)
         {
             return GenerateGreeting(request.FirstName, request.LastName);
+        }
 
-        }
-        private string GenerateGreeting(string firstName,string lastName)
+        private string GenerateGreeting(string firstName, string lastName)
         {
-            if(!string.IsNullOrWhiteSpace(firstName) && !string.IsNullOrWhiteSpace(lastName)) 
+            if (!string.IsNullOrWhiteSpace(firstName) && !string.IsNullOrWhiteSpace(lastName))
             {
-                return $"Hello,{firstName} {lastName}!";
-        }
-            else if (!string.IsNullOrWhiteSpace(firstName)) 
-            {
-                return $"Hello,{firstName}";
+                return $"Hello, {firstName} {lastName}!";
             }
-            else if(!string.IsNullOrWhiteSpace(lastName))
+            else if (!string.IsNullOrWhiteSpace(firstName))
             {
-                return $"Hello,{lastName}";
-             }
+                return $"Hello, {firstName}!";
+            }
+            else if (!string.IsNullOrWhiteSpace(lastName))
+            {
+                return $"Hello, {lastName}!";
+            }
 
             return _greetingRL.GetGreeting();
         }
+
+
     }
 }
