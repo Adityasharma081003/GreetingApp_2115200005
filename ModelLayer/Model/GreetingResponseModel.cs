@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ModelLayer.Model;
 
-namespace RepositoryLayer.Interface
+namespace ModelLayer.Model
 {
-    public interface IGreetingRL
+    public class GreetingResponseModel
     {
-        string GetGreeting();
+        public string Message { get; set; }
 
     }
 }

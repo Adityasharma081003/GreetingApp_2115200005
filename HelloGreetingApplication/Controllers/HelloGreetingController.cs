@@ -1,4 +1,5 @@
 
+using BusinessLayer.Interface;
 using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
@@ -13,6 +14,12 @@ namespace HelloGreetingApplication.Controllers
     public class HelloGreetingController : ControllerBase
     {
         private static Dictionary<string, string> greetings = new Dictionary<string, string>();
+        private readonly IGreetingBL _greetingBL;
+
+        public HelloGreetingController(IGreetingBL greetingBL)
+        {
+            _greetingBL = greetingBL;
+        }
 
         /// <summary>
         /// Get method to get the greeting message
@@ -76,7 +83,7 @@ namespace HelloGreetingApplication.Controllers
         public IActionResult Put(string key, string newValue)
         {
 
-                if (!greetings.ContainsKey(key))
+            if (!greetings.ContainsKey(key))
             {
                 return NotFound(new ResponseModel<string>
                 {
@@ -97,7 +104,7 @@ namespace HelloGreetingApplication.Controllers
         }
 
 
-        
+
 
         /// <summary>
         /// Delete method to remove a greeting message
@@ -148,6 +155,18 @@ namespace HelloGreetingApplication.Controllers
                 Data = $"Key: {key}, Value: {greetings[key]}"
             });
         }
+        [HttpPost("personalizedgreet")]
+        public IActionResult PostGreeting([FromBody] GreetingRequestModel requestModel)
+        {
+            var greetingMessage = _greetingBL.GetPersonalizedGreeting(requestModel);
+            var response = new ResponseModel<string>
 
+            {
+                Success = true,
+                Message = "Personalized greeting create successfully",
+                Data = greetingMessage
+            };
+            return Ok(response);
+        }
     }
 }
