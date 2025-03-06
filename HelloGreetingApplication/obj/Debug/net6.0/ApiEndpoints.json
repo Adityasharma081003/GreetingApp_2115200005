@@ -85,6 +85,32 @@
   },
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
+    "Method": "Post",
+    "RelativePath": "HelloGreeting/addgreet",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "greetingDTO",
+        "Type": "RepositoryLayer.DTO.GreetingDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
+    "Method": "GetGreeting",
+    "RelativePath": "HelloGreeting/Greet",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "PostGreeting",
     "RelativePath": "HelloGreeting/personalizedgreet",
     "HttpMethod": "POST",
