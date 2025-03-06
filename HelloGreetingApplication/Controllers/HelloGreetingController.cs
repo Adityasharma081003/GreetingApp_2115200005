@@ -1,3 +1,4 @@
+
 using BusinessLayer.Interface;
 using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Mvc;
@@ -235,6 +236,32 @@ namespace HelloGreetingApplication.Controllers
                 Success = true,
                 Message = "Greeting added successfully.",
                 Data = $"{greetingDTO.Key}:{greetingDTO.Value}"
+            });
+        }
+        /// <summary>
+        /// Get method to retrieve a greeting by its ID.
+        /// </summary>
+        /// <param name="id">Greeting ID.</param>
+        /// <returns>Greeting message if found, otherwise a not found response.</returns>
+        [HttpGet("getgreetbyid/{id:int}")]
+        public IActionResult GetGreetingById(int id)
+        {
+            GreetingDTO greeting = _greetingBL.GetGreetingById(id);
+            if (greeting == null)
+            {
+                return NotFound(new ResponseModel<string>
+                {
+                    Success = false,
+                    Message = "Greeting not found.",
+                    Data = null
+                });
+            }
+
+            return Ok(new ResponseModel<GreetingDTO>
+            {
+                Success = true,
+                Message = "Greeting retrieved successfully.",
+                Data = greeting
             });
         }
 

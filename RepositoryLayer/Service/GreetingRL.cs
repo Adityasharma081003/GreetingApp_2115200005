@@ -18,6 +18,11 @@ namespace RepositoryLayer.Service
         {
             _context = context;
         }
+        public GreetingDTO GetGreetingById(int id)
+        {
+            var greeting = _context.Greetings.FirstOrDefault(g => g.Id == id);
+            return greeting == null ? null : new GreetingDTO { Key = greeting.Key, Value = greeting.Value };
+        }
 
         public bool AddGreeting(GreetingDTO greetingDTO)
         {
