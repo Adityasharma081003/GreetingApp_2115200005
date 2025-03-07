@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +17,15 @@ namespace RepositoryLayer.Service
         public GreetingRL(GreetingDBContext context)
         {
             _context = context;
+        }
+
+        public bool DeleteGreeting(int id)
+        {
+            var greeting = _context.Greetings.FirstOrDefault(g => g.Id == id);
+            if (greeting == null) return false;
+
+            _context.Greetings.Remove(greeting);
+            return _context.SaveChanges() > 0;
         }
 
         public bool UpdateGreeting(int id, string newValue)
