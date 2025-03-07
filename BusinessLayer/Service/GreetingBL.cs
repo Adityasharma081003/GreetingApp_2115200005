@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +17,11 @@ namespace BusinessLayer.Service
         public GreetingBL(IGreetingRL greetingRL)
         {
             _greetingRL = greetingRL;
+        }
+
+        public bool UpdateGreeting(int id, string newValue)
+        {
+            return _greetingRL.UpdateGreeting(id, newValue);
         }
 
         public List<GreetingDTO> GetAllGreetings()
